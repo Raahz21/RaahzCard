@@ -1,0 +1,529 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a1b2f 0%, #2d325a 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 800px;
+    min-height: 600px;
+    height: auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {   
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.card-header h1 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    letter-spacing: 2px;
+}
+
+.card-body {
+    flex: 1;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 300px;
+}
+
+.card-image {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card-image-navbar {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 0.8rem;
+    padding: 0.8rem;
+}
+
+.card-image-navbar ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.8rem;
+    width: 100%;
+}
+
+.card-image-navbar li {
+    list-style-type: none;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.card-image-navbar li:hover {
+    transform: translateX(10px);
+}
+
+.card-image-navbar li a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    height: 100%;
+    color: #ffffff;
+    text-align: center;
+    font-size: 0.95rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.card-image-navbar li a:hover,
+.card-image-navbar li a.active {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.price-content {
+    width: 100%;
+    overflow-x: auto;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 0.8rem;
+    padding: 1rem;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel {
+    background: transparent;
+    padding: 0;
+}
+
+.carousel h3 {
+    font-size: 1.1rem;
+    white-space: nowrap;
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.carousel h4 {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 1.5rem 0 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.carousel h4:first-of-type {
+    margin-top: 2rem;
+}
+
+.price-table {
+    min-width: 500px; /* Ensure minimum width for content */
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 0;
+}
+
+.price-table th {
+    background: rgba(255, 255, 255, 0.1);
+    font-weight: 500;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.price-table td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    white-space: nowrap;
+    font-size: 0.9rem;
+}
+
+/* Add this after your existing styles */
+
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.nav-button {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.nav-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button:active {
+    transform: translateY(0);
+}
+
+.back-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 0.8rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    margin-top: 2rem;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.back-btn:active {
+    transform: translateY(0);
+}
+
+/* Update responsive styles for buttons */
+@media screen and (max-width: 768px) {
+    .nav-button,
+    .back-btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .carousel-nav {
+        gap: 0.8rem;
+    }
+
+    .nav-button,
+    .back-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Update responsive styles */
+@media screen and (max-width: 768px) {
+    .card {
+        padding: 1rem;
+        width: 95%;
+    }
+    
+    .card-image {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .card-image-navbar {
+        padding: 0.6rem;
+    }
+
+    .card-image-navbar ul {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 0.6rem;
+    }
+
+    .card-image-navbar li a {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .price-content {
+        padding: 0.8rem;
+        margin: 0 -0.5rem;
+        width: calc(100% + 1rem);
+    }
+
+    .price-table {
+        font-size: 0.85rem;
+    }
+
+    .price-table th,
+    .price-table td {
+        padding: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card {
+        padding: 0.8rem;
+    }
+
+    .card-body {
+        padding: 0.8rem;
+    }
+
+    .price-content {
+        padding: 0.6rem;
+    }
+
+    .carousel h3 {
+        font-size: 1rem;
+    }
+
+    .price-table {
+        font-size: 0.8rem;
+    }
+
+    .price-table th,
+    .price-table td {
+        padding: 0.6rem;
+    }
+}
+
+/* Improve scroll aesthetics */
+.price-content::-webkit-scrollbar {
+    height: 3px;
+}
+
+.price-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.price-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+/* Add these styles after your price-content class */
+.scroll-reminder {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: none; /* Hidden by default, shown only on mobile */
+}
+
+.scroll-reminder i {
+    display: inline-block;
+    margin: 0 0.3rem;
+    animation: scrollHint 1.5s ease-in-out infinite;
+}
+
+@keyframes scrollHint {
+    0% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    100% { transform: translateX(-3px); }
+}
+
+/* Show reminder only on mobile devices */
+@media screen and (max-width: 768px) {
+    .scroll-reminder {
+        display: block;
+    }
+}
+
+/* Add after your existing styles */
+.note {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.5rem;
+    border-left: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.carousel-item {
+    display: none;
+    animation: fadeEffect 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Update decorative icons styles */
+.decorative-icons {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.icon {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    opacity: 0.15;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+    transition: opacity 0.3s ease;
+}
+
+.icon:hover {
+    opacity: 0.3;
+}
+
+.icon-small {
+    width: 32px;
+    height: 32px;
+}
+
+/* Position classes */
+.top-right { top: 5%; right: 10%; animation: float1 6s ease-in-out infinite; }
+.top-left { top: 8%; left: 10%; animation: float2 7s ease-in-out infinite; }
+.top-center { top: 3%; left: 50%; animation: float3 8s ease-in-out infinite; }
+.right-center { top: 50%; right: 5%; animation: float4 7s ease-in-out infinite; }
+.left-center { top: 50%; left: 5%; animation: float5 9s ease-in-out infinite; }
+.bottom-right { bottom: 8%; right: 12%; animation: float6 8s ease-in-out infinite; }
+.bottom-left { bottom: 10%; left: 8%; animation: float7 6s ease-in-out infinite; }
+.bottom-center { bottom: 5%; left: 50%; animation: float8 7s ease-in-out infinite; }
+
+.top-corner-right { top: 2%; right: 2%; animation: float9 5s ease-in-out infinite; }
+.top-corner-left { top: 2%; left: 2%; animation: float10 5s ease-in-out infinite; }
+.bottom-corner-right { bottom: 2%; right: 2%; animation: float11 5s ease-in-out infinite; }
+.bottom-corner-left { bottom: 2%; left: 2%; animation: float12 5s ease-in-out infinite; }
+
+/* Float animations with different patterns */
+@keyframes float1 {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes float2 {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(15px) rotate(-8deg); }
+}
+
+@keyframes float3 {
+    0%, 100% { transform: translate(-50%, 0) rotate(0); }
+    50% { transform: translate(-50%, -15px) rotate(3deg); }
+}
+
+@keyframes float4 {
+    0%, 100% { transform: translateY(-50%) rotate(0); }
+    50% { transform: translateY(-50%) translateX(-15px) rotate(-5deg); }
+}
+
+@keyframes float5 {
+    0%, 100% { transform: translateY(-50%) rotate(0); }
+    50% { transform: translateY(-50%) translateX(15px) rotate(5deg); }
+}
+
+@keyframes float6 {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-25px) rotate(-10deg); }
+}
+
+@keyframes float7 {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(20px) rotate(8deg); }
+}
+
+@keyframes float8 {
+    0%, 100% { transform: translate(-50%, 0) rotate(0); }
+    50% { transform: translate(-50%, 15px) rotate(-3deg); }
+}
+
+@keyframes float9 {
+    0%, 100% { transform: scale(1) rotate(0); }
+    50% { transform: scale(1.1) rotate(5deg); }
+}
+
+@keyframes float10 {
+    0%, 100% { transform: scale(1) rotate(0); }
+    50% { transform: scale(1.1) rotate(-5deg); }
+}
+
+@keyframes float11 {
+    0%, 100% { transform: scale(1) rotate(0); }
+    50% { transform: scale(1.1) rotate(8deg); }
+}
+
+@keyframes float12 {
+    0%, 100% { transform: scale(1) rotate(0); }
+    50% { transform: scale(1.1) rotate(-8deg); }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .icon {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .icon-small {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .icon-small {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.card-footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
