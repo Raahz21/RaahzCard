@@ -30,6 +30,10 @@ body {
     flex-direction: column;
 }
 
+.page {
+    text-decoration: none;
+    color: rgb(0, 162, 255);
+}
 .card-header {   
     text-align: center;
     margin-bottom: 2rem;
@@ -89,6 +93,8 @@ body {
 
 .card-image-navbar li:hover {
     transform: translateX(10px);
+    color: black;
+    border-radius: 1rem;
 }
 
 .card-image-navbar li a {
@@ -104,6 +110,7 @@ body {
 .card-image-navbar li a:hover {
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    border-radius: 1rem;
 }
 
 /* Center menu text in mobile view */
@@ -137,7 +144,9 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 3rem; /* Add space for label */
     will-change: transform;
+    animation: change 5s infinite alternate;
 }
+
 
 .card-image .aim::after {
     content: 'Raahz';
