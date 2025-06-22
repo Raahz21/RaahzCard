@@ -6,6 +6,33 @@
     <link rel="stylesheet" href="index.css">
     <title>Raahz Card</title>
 </head>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.getElementById('stickers-toggle');
+    const dropdown = document.getElementById('stickers-dropdown');
+    const contactMenu = document.querySelector('.contact-menu');
+
+    toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        dropdown.classList.toggle('open');
+        // Move Contact menu down/up with dropdown
+        if (dropdown.classList.contains('open')) {
+            contactMenu.style.marginTop = dropdown.scrollHeight + 24 + 'px';
+        } else {
+            contactMenu.style.marginTop = '';
+        }
+    });
+
+    // Optional: close dropdown if clicked outside
+    document.addEventListener('click', function(e) {
+        if (!toggle.contains(e.target) && !dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+            contactMenu.style.marginTop = '';
+        }
+    });
+});
+</script>
 <body>
     <div class="card">
         <div class="card-header">
@@ -46,8 +73,30 @@
                 <ul>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="https://www.facebook.com/share/p/16hvQsRFXb/">Vouches</a></li>
-                    <li><a href="https://www.facebook.com/share/p/1BurEJb91N/">Stickers</a></li>
-                    <li><a href="https://www.facebook.com/profile.php?id=61576585464156">Contact</a></li>
+                    <li class="stickers-menu">
+                        <a href="#" id="stickers-toggle">Stickers</a>
+                        <div class="stickers-dropdown" id="stickers-dropdown">
+                            <div class="sticker-item">
+                                <img src="stickers/Astral Abyss Sticker.png" alt="Astral Abyss Sticker" style="width:100px;margin:10px;">
+                                <div class="sticker-label" style="color:#fff;font-weight:bold;margin-top:0.5rem;">Astral Abyss Sticker</div>
+                                <div class="sticker-link-desc" style="font-size:0.95em;color:#b0b0b0;margin-bottom:1rem;">
+                                    <a href="https://www.facebook.com/photo.php?fbid=122127571526886182&set=p.122127571526886182&type=3&__cft__[0]=AZVYO-aT3vJVpC0dhAguKDV9n_0lC1QOxQtIMTWOmVvniCRfoeKqJcEBobTJTtYBYHi1Fn3tOCUcG_u2Rv8FwRMR2Aa4f-MlSLH0AKsRxHiwwLFHQlemh-Etvf-TSa4QCRMBBDq-lbzXlWAgDCb1RNH_LLRgqgqkTED-3a8HtsCqc4_XQQK_I4ZNzu6-XbMZYSo&__tn__=R]-R" target="_blank" style="color:#4a90e2;text-decoration:underline;">
+                                        View on Facebook
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sticker-item">
+                                <img src="stickers/Raahz GITP sticker.jpg" alt="Raahz GITP Sticker" style="width:100px;margin:10px;">
+                                <div class="sticker-label" style="color:#fff;font-weight:bold;margin-top:0.5rem;">Raahz GITP Sticker</div>
+                                <div class="sticker-link-desc" style="font-size:0.95em;color:#b0b0b0;margin-bottom:1rem;">
+                                    <a href="https://www.facebook.com/photo.php?fbid=122126291774886182&set=p.122126291774886182&type=3&__cft__[0]=AZVYO-aT3vJVpC0dhAguKDV9n_0lC1QOxQtIMTWOmVvniCRfoeKqJcEBobTJTtYBYHi1Fn3tOCUcG_u2Rv8FwRMR2Aa4f-MlSLH0AKsRxHiwwLFHQlemh-Etvf-TSa4QCRMBBDq-lbzXlWAgDCb1RNH_LLRgqgqkTED-3a8HtsCqc4_XQQK_I4ZNzu6-XbMZYSo&__tn__=R]-R" target="_blank" style="color:#4a90e2;text-decoration:underline;">
+                                        View on Facebook
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="contact-menu"><a href="https://www.facebook.com/profile.php?id=61576585464156">Contact</a></li>
                 </ul>
             </div>
                 <img class="aim" src="img/aim.png" alt="clorinde">
