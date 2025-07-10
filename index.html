@@ -31,6 +31,30 @@ document.addEventListener('DOMContentLoaded', function() {
             contactMenu.style.marginTop = '';
         }
     });
+
+    // Menu background slideshow
+    const bgImages = [
+        'img/aim.png',
+        'img/drinkingtea.png',
+        'img/posing.png',
+        'img/sword.png'
+    ];
+    const slideshow = document.querySelector('.menu-bg-slideshow');
+    let bgIndex = 0;
+
+    function nextBg() {
+        slideshow.style.opacity = 0;
+        setTimeout(() => {
+            slideshow.style.backgroundImage = `url('${bgImages[bgIndex]}')`;
+            slideshow.style.opacity = 0.45;
+            bgIndex = (bgIndex + 1) % bgImages.length;
+        }, 800);
+    }
+
+    // Initialize
+    slideshow.style.backgroundImage = `url('${bgImages[0]}')`;
+    slideshow.style.opacity = 0.45;
+    setInterval(nextBg, 1500);
 });
 </script>
 <body>
@@ -70,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <div class="card-image">
             <div class="card-image-navbar">
+                <div class="menu-bg-slideshow"></div>
                 <ul>
                     <li><a href="services.html">Prices & Services</a></li>
                     <li><a href="https://www.facebook.com/share/p/16hvQsRFXb/">Vouches</a></li>
